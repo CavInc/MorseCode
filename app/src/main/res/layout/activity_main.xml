@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:paddingRight="16dp"
+    android:paddingLeft="16dp"
+    android:paddingTop="8dp"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="Нажмите клавишу на клавиатуре для получения сигнала"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/morze_symbol"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/letter_et"
+        android:focusedByDefault="true"
+        android:textAllCaps="true"
+        android:focusable="true"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:imeOptions="actionNext"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <requestFocus/>
+    </EditText>
+
+    <include layout="@layout/key_panel"/>
+</LinearLayout>
