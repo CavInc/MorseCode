@@ -5,6 +5,19 @@
     android:insetLeft="2dp"
     android:insetRight="2dp">
     <selector>
+        <item android:state_pressed="true">
+            <shape android:shape="rectangle">
+                <solid android:color="@color/app_indigo_ligth"/>
+                <stroke android:color="@color/app_teal"
+                    android:width="2dp"/>
+                <corners
+                    android:radius="4dp"/>
+                <padding android:bottom="8dp"
+                    android:top="8dp"
+                    android:left="4dp"
+                    android:right="4dp"/>
+            </shape>
+        </item>
         <item>
             <shape android:shape="rectangle">
                 <stroke android:color="@color/app_teal"
@@ -17,6 +30,7 @@
                     android:right="4dp"/>
             </shape>
         </item>
+
 
     </selector>
 </inset>

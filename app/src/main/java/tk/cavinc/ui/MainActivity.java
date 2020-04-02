@@ -39,9 +39,9 @@ public class MainActivity extends AppCompatActivity  {
         mDataManager = DataManager.getInstance();
 
         mMsg = findViewById(R.id.morze_symbol);
-        mEditText = (EditText) findViewById(R.id.letter_et);
+        //mEditText = (EditText) findViewById(R.id.letter_et);
 
-        mEditText.addTextChangedListener(mTextWatcher);
+        //mEditText.addTextChangedListener(mTextWatcher);
     }
 
     @Override
@@ -92,6 +92,108 @@ public class MainActivity extends AppCompatActivity  {
             case R.id.L_W:
                 morseKey("W");
                 break;
+            case R.id.L_E:
+                morseKey("E");
+                break;
+            case R.id.L_R:
+                morseKey("R");
+                break;
+            case R.id.L_T:
+                morseKey("T");
+                break;
+            case R.id.L_Y:
+                morseKey("Y");
+                break;
+            case R.id.L_U:
+                morseKey("U");
+                break;
+            case R.id.L_I:
+                morseKey("I");
+                break;
+            case R.id.L_O:
+                morseKey("O");
+                break;
+            case R.id.L_P:
+                morseKey("P");
+                break;
+            case R.id.L_A:
+                morseKey("A");
+                break;
+            case R.id.L_S:
+                morseKey("S");
+                break;
+            case R.id.L_D:
+                morseKey("D");
+                break;
+            case R.id.L_F:
+                morseKey("F");
+                break;
+            case R.id.L_G:
+                morseKey("G");
+                break;
+            case R.id.L_H:
+                morseKey("H");
+                break;
+            case R.id.L_J:
+                morseKey("J");
+                break;
+            case R.id.L_K:
+                morseKey("K");
+                break;
+            case R.id.L_L:
+                morseKey("L");
+                break;
+            case R.id.L_Z:
+                morseKey("Z");
+                break;
+            case R.id.L_X:
+                morseKey("X");
+                break;
+            case R.id.L_C:
+                morseKey("C");
+                break;
+            case R.id.L_V:
+                morseKey("V");
+                break;
+            case R.id.L_B:
+                morseKey("B");
+                break;
+            case R.id.L_N:
+                morseKey("N");
+                break;
+            case R.id.L_M:
+                morseKey("M");
+                break;
+            case R.id.L_1:
+                morseKey("1");
+                break;
+            case R.id.L_2:
+                morseKey("2");
+                break;
+            case R.id.L_3:
+                morseKey("3");
+                break;
+            case R.id.L_4:
+                morseKey("4");
+                break;
+            case R.id.L_5:
+                morseKey("5");
+                break;
+            case R.id.L_6:
+                morseKey("6");
+                break;
+            case R.id.L_7:
+                morseKey("7");
+                break;
+            case R.id.L_8:
+                morseKey("8");
+                break;
+            case R.id.L_9:
+                morseKey("9");
+                break;
+            case R.id.L_0:
+                morseKey("0");
+                break;
         }
     }
 
@@ -101,7 +203,14 @@ public class MainActivity extends AppCompatActivity  {
         if (id != -1) {
             LeterMorseModel item = data.get(id);
             mMsg.setText(item.getMnemonik());
+            playMorze();
         }
+    }
+
+    private void playMorze(){
+        AudioTrack tone = generateTone(1000, 100);
+        tone.play();
+        clearMemory(tone);
     }
 
     // https://www.cyberforum.ru/android-dev/thread1803841.html

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
+            android:id="@+id/L_1"
             android:text="1"
             android:onClick="onButtonClick"
             android:background="@drawable/button_bg"
@@ -14,6 +15,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/L_2"
             android:text="2"
             android:onClick="onButtonClick"
             android:background="@drawable/button_bg"
@@ -21,6 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/L_3"
             android:text="3"
             android:onClick="onButtonClick"
             android:background="@drawable/button_bg"
@@ -28,6 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/L_4"
             android:text="4"
             android:onClick="onButtonClick"
             android:background="@drawable/button_bg"
@@ -35,6 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/L_5"
             android:text="5"
             android:onClick="onButtonClick"
             android:background="@drawable/button_bg"
@@ -42,6 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/L_6"
             android:text="6"
             android:onClick="onButtonClick"
             android:background="@drawable/button_bg"
@@ -49,6 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/L_7"
             android:text="7"
             android:onClick="onButtonClick"
             android:background="@drawable/button_bg"
@@ -56,6 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/L_8"
             android:text="8"
             android:onClick="onButtonClick"
             android:background="@drawable/button_bg"
@@ -63,6 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/L_9"
             android:text="9"
             android:onClick="onButtonClick"
             android:background="@drawable/button_bg"
@@ -70,6 +79,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/L_0"
             android:text="0"
             android:onClick="onButtonClick"
             android:background="@drawable/button_bg"
@@ -98,6 +108,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/L_E"
             android:text="E"
             android:onClick="onButtonClick"
             android:background="@drawable/button_bg"
@@ -105,6 +116,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/L_R"
             android:text="R"
             android:onClick="onButtonClick"
             android:background="@drawable/button_bg"
@@ -112,6 +124,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/L_T"
             android:text="T"
             android:onClick="onButtonClick"
             android:background="@drawable/button_bg"
@@ -119,6 +132,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/L_Y"
             android:text="Y"
             android:onClick="onButtonClick"
             android:background="@drawable/button_bg"
@@ -126,6 +140,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/L_U"
             android:text="U"
             android:onClick="onButtonClick"
             android:background="@drawable/button_bg"
@@ -133,6 +148,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/L_I"
             android:text="I"
             android:onClick="onButtonClick"
             android:background="@drawable/button_bg"
@@ -140,6 +156,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/L_O"
             android:text="O"
             android:onClick="onButtonClick"
             android:background="@drawable/button_bg"
@@ -147,7 +164,154 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <Button
+            android:id="@+id/L_P"
             android:text="P"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/L_A"
+            android:text="A"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/L_S"
+            android:text="S"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/L_D"
+            android:text="D"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/L_F"
+            android:text="F"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/L_G"
+            android:text="G"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/L_H"
+            android:text="H"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/L_J"
+            android:text="J"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/L_K"
+            android:text="K"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/L_L"
+            android:text="L"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:text="RUS"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/L_Z"
+            android:text="Z"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/L_X"
+            android:text="X"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/L_C"
+            android:text="C"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/L_V"
+            android:text="V"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/L_B"
+            android:text="B"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/L_N"
+            android:text="N"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/L_M"
+            android:text="M"
             android:onClick="onButtonClick"
             android:background="@drawable/button_bg"
             android:layout_weight="1"

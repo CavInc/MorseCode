@@ -8,6 +8,7 @@ public class LeterMorseModel {
     private String mLatLeter; // латинская буква
     private String mRusLeter; // русская буква
     private String mMnemonik; // напев
+    private String mCode; // код морзе
 
     public LeterMorseModel(String latLeter, String rusLeter, String mnemonik) {
         mLatLeter = latLeter;
@@ -20,6 +21,8 @@ public class LeterMorseModel {
         mMnemonik = mnemonik;
     }
 
+
+
     public String getLatLeter() {
         return mLatLeter;
     }
@@ -30,6 +33,10 @@ public class LeterMorseModel {
 
     public String getMnemonik() {
         return mMnemonik;
+    }
+
+    public String getCode() {
+        return mCode;
     }
 
     @Override
