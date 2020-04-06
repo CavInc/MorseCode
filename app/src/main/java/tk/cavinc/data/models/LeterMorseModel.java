@@ -21,7 +21,12 @@ public class LeterMorseModel {
         mMnemonik = mnemonik;
     }
 
-
+    public LeterMorseModel(String latLeter, String rusLeter, String mnemonik, String code) {
+        mLatLeter = latLeter;
+        mRusLeter = rusLeter;
+        mMnemonik = mnemonik;
+        mCode = code;
+    }
 
     public String getLatLeter() {
         return mLatLeter;

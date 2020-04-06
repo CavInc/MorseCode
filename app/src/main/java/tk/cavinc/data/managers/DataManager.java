@@ -57,7 +57,8 @@ public class DataManager {
                 JSONObject item = jArr.getJSONObject(i);
                 String letter = item.getString("leter");
                 String mnem = item.getString("mnemonik");
-                rec.add(new LeterMorseModel(letter,mnem));
+                String code = item.getString("code");
+                rec.add(new LeterMorseModel(letter,letter,mnem,code));
             }
 
         } catch (JSONException e) {
