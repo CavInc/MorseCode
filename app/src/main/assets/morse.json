@@ -2,31 +2,32 @@
   "version":1,
   "data":[
     {"leter":"A",
+      "letterR":"А",
       "mnemonik":"ай-даа",
       "code":".-"
     },
     {
       "leter":"B",
       "mnemonik":"баа-ки-те-кут",
-      "code":""
+      "code":"-..."
     },
     {"leter":"W",
       "mnemonik":"ви-даа-лаа, вол-чаа-таа",
-      "code":""
+      "code":".--"
     },
     {"leter":"Q",
       "mnemonik":"ща-ваам-не-шаа,щуу-каа-жи-ваа",
-      "code":""
+      "code":"--.-"
     },
     {
       "leter":"G",
       "mnemonik":"гаа-ра-жи,гаа-гаа-рин",
-      "code":""
+      "code":"--."
     },
     {
       "leter":"D",
       "mnemonik":"доо-ми-ки",
-      "code":""
+      "code":"-.."
     },
     {
       "leter":"E",
@@ -37,52 +38,52 @@
     {
       "leter":"V",
       "mnemonik":"же-ле-зис-тоо, жи-ви-те-таак",
-      "code":""
+      "code":"...-"
     },
     {
       "leter":"Z",
       "mnemonik":"заа-каа-ти-ки, заа-моо-чи-ки",
-      "code":""
+      "code":"--.."
     },
     {
       "leter":"I",
       "mnemonik":"и-ди",
-      "code":""
+      "code":".."
     },
     {
       "leter":"J",
       "mnemonik":"йас-наа-паа-раа, йош-каа-роо-лаа",
-      "code":""
+      "code":".---"
     },
     {
       "leter":"K",
       "mnemonik":"каак-же-таак, каак-де-лаа",
-      "code":""
+      "code":"-.-"
     },
     {
       "leter":"L",
       "mnemonik":"лу-наа-тик-ки",
-      "code":""
+      "code":".-.."
     },
     {
       "leter":"M",
       "mnemonik":"маа-маа",
-      "code":""
+      "code":"--"
     },
     {
       "leter":"N",
       "mnemonik":"ноо-мер,наа-те",
-      "code":""
+      "code":"-."
     },
     {
       "leter":"O",
       "mnemonik":"оо-коо-лоо",
-      "code":""
+      "code":"---"
     },
     {
       "leter":"P",
       "mnemonik":"пи-лаа-поо-ёт, пи-лаа-ноо-ет",
-      "code":""
+      "code":".--."
     },
     {
       "leter":"R",
@@ -102,83 +103,83 @@
     {
       "leter":"U",
       "mnemonik":"у-нес-лоо",
-      "code":""
+      "code":"..--"
     },
     {
       "leter":"F",
       "mnemonik":"фи-ли-моон-чик",
-      "code":""
+      "code":"..-."
     },
     {
       "leter":"H",
       "mnemonik":"хи-ми-чи-те",
-      "code":""
+      "code":"...."
     },
     {
       "leter":"C",
       "mnemonik":"цаа-пли-наа-ши, цаа-пли-хоо-дят,цыы-па-цыы-па",
-      "code":""
+      "code":"-.-."
     },
     {
       "leter":"X",
       "mnemonik":"тоо-мяг-кий-знаак",
-      "code":""
+      "code":"-..-"
     },
     {
       "leter":"Y",
       "mnemonik":"ыы-не-наа-доо",
-      "code":""
+      "code":"-.--"
     },
     {
       "leter":"1",
       "mnemonik":"и-тооль-коо-оо-днаа",
-      "code":""
+      "code":".----"
     },
     {
       "leter":"2",
       "mnemonik":"две-не-хоо-роо-шоо",
-      "code":""
+      "code":"..---"
     },
     {
       "leter":"3",
       "mnemonik":"три-те-бе-маа-лоо",
-      "code":""
+      "code":"...--"
     },
     {
       "leter":"4",
       "mnemonik":"че-тве-ри-те-каа",
-      "code":"...-"
+      "code":"....-"
 
     },
     {
       "leter":"5",
       "mnemonik":"5",
-      "code":""
+      "code":"....."
     },
     {
       "leter":"6",
       "mnemonik":"6",
-      "code":""
+      "code":"-...."
     },
     {
       "leter":"7",
       "mnemonik":"7",
-      "code":""
+      "code":"--..."
     },
     {
       "leter":"8",
       "mnemonik":"8",
-      "code":""
+      "code":"---.."
     },
     {
       "leter":"9",
       "mnemonik":"9",
-      "code":""
+      "code":"----."
     },
     {
       "leter":"0",
       "mnemonik":"0",
-      "code":""
+      "code":"-----"
     }
   ]
 }
