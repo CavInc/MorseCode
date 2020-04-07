@@ -202,7 +202,7 @@ public class MainActivity extends AppCompatActivity  {
         Log.d(TAG,"ID :"+id);
         if (id != -1) {
             LeterMorseModel item = data.get(id);
-            mMsg.setText(item.getMnemonik());
+            mMsg.setText(item.getMnemonik()+"\n"+item.getCode());
             playMorze();
         }
     }
