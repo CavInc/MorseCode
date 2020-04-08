@@ -58,7 +58,11 @@ public class DataManager {
                 String letter = item.getString("leter");
                 String mnem = item.getString("mnemonik");
                 String code = item.getString("code");
-                rec.add(new LeterMorseModel(letter,letter,mnem,code));
+                String letterR = letter;
+                if (item.has("letterR")) {
+                    letterR = item.getString("letterR");
+                }
+                rec.add(new LeterMorseModel(letter,letterR,mnem,code));
             }
 
         } catch (JSONException e) {

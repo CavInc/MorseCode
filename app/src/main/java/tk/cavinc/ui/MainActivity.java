@@ -87,7 +87,11 @@ public class MainActivity extends AppCompatActivity  {
     public void onButtonClick(View v){
         switch (v.getId()){
             case R.id.L_Q:
-                morseKey("Q");
+                if (letterRus) {
+                    morseKey("Q");
+                } else {
+                    morseKey("Й");
+                }
                 break;
             case R.id.L_W:
                 morseKey("W");
