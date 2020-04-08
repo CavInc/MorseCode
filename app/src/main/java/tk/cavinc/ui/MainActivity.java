@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity  {
     private TextView mMsg;
     private EditText mEditText;
     private ArrayList<LeterMorseModel> data;
+    private boolean letterRus = false;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -192,6 +193,16 @@ public class MainActivity extends AppCompatActivity  {
                 break;
             case R.id.L_0:
                 morseKey("0");
+                break;
+            case R.id.L_CHG:
+                letterRus = !letterRus;
+                if (letterRus) {
+                    findViewById(R.id.key_panel_lat).setVisibility(View.GONE);
+                    findViewById(R.id.key_panel_rus).setVisibility(View.VISIBLE);
+                } else {
+                    findViewById(R.id.key_panel_lat).setVisibility(View.VISIBLE);
+                    findViewById(R.id.key_panel_rus).setVisibility(View.GONE);
+                }
                 break;
         }
     }

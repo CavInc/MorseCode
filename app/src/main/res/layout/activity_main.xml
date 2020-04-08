@@ -27,6 +27,7 @@
         android:layout_height="wrap_content">
         <include
             layout="@layout/key_panel"/>
+        <include layout="@layout/key_panel_ru"/>
     </LinearLayout>
 
 </RelativeLayout>
