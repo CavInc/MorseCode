@@ -255,15 +255,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/L_CHG"
-            android:text="Лат"
-            android:textSize="10sp"
-            android:onClick="onButtonClick"
-            android:background="@drawable/button_bg"
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+
         <Button
             android:id="@+id/L_Z"
             android:text="Я"
@@ -315,6 +307,54 @@
         <Button
             android:id="@+id/L_M"
             android:text="Ь"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/L_CHG"
+            android:text="Лат"
+            android:textSize="10sp"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/L_XX"
+            android:text="Х"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/L_TSIG"
+            android:text="Ъ"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/L_JJ"
+            android:text="Ж"
+            android:onClick="onButtonClick"
+            android:background="@drawable/button_bg"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/L_EE"
+            android:text="Э"
             android:onClick="onButtonClick"
             android:background="@drawable/button_bg"
             android:layout_weight="1"

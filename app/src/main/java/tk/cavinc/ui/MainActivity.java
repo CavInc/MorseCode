@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 import tk.cavinc.R;
 import tk.cavinc.data.managers.DataManager;
@@ -217,14 +218,44 @@ public class MainActivity extends AppCompatActivity  {
         if (id != -1) {
             LeterMorseModel item = data.get(id);
             mMsg.setText(item.getMnemonik()+"\n"+item.getCode());
-            playMorze();
+            playMorze(item.getCode());
         }
     }
 
-    private void playMorze(){
+    private void playMorze(final String code){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                AudioTrack tone = null;
+                for (int i=0;i<code.length();i++){
+                    String m = code.substring(i,i+1);
+                    Log.d(TAG,m);
+                    if (m.equals(".")) {
+                        tone = generateTone(800,100);
+                    } else if (m.equals("-")){
+                        tone = generateTone(800,300);
+                    }
+                    tone.play();
+                    try {
+                        TimeUnit.MILLISECONDS.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                try {
+                    TimeUnit.MILLISECONDS.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                clearMemory(tone);
+            }
+        }).start();
+
+        /*
         AudioTrack tone = generateTone(1000, 100);
         tone.play();
         clearMemory(tone);
+        */
     }
 
     // https://www.cyberforum.ru/android-dev/thread1803841.html
@@ -245,7 +276,7 @@ public class MainActivity extends AppCompatActivity  {
             samples[i + 0] = sample;
         }
         AudioTrack track = new AudioTrack(AudioManager.STREAM_MUSIC, sampleRate,
-                AudioFormat.CHANNEL_OUT_MONO, AudioFormat.ENCODING_PCM_16BIT,
+                AudioFormat.CHANNEL_IN_STEREO, AudioFormat.ENCODING_PCM_16BIT,
                 count * (Short.SIZE / 8), AudioTrack.MODE_STATIC);
         track.write(samples, 0, count);
         return track;

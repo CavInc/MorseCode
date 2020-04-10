@@ -23,6 +23,8 @@ public class DataManager {
     private Context mContext;
     private PrefManager mPreManager;
 
+    private int[] delaySignal = {100,200};
+
     public static DataManager getInstance() {
         if (INSTANCE==null){
             INSTANCE = new DataManager();
@@ -72,4 +74,7 @@ public class DataManager {
         return rec;
     }
 
+    public int[] getDelaySignal() {
+        return delaySignal;
+    }
 }
