@@ -34,6 +34,7 @@ public class DataManager {
 
     public DataManager() {
         mContext = App.getContext();
+        mPreManager = new PrefManager();
     }
 
     public ArrayList<LeterMorseModel> loadMorseData(){
@@ -72,6 +73,10 @@ public class DataManager {
         }
 
         return rec;
+    }
+
+    public PrefManager getPreManager() {
+        return mPreManager;
     }
 
     public int[] getDelaySignal() {
