@@ -199,6 +199,24 @@ public class MainActivity extends AppCompatActivity  {
             case R.id.L_0:
                 morseKey("0");
                 break;
+            case R.id.L_BB:
+                morseKey("Б");
+                break;
+            case R.id.L_XX:
+                morseKey("Х");
+                break;
+            case R.id.L_EE:
+                morseKey("Э");
+                break;
+            case R.id.L_TSIG:
+                morseKey("Ъ");
+                break;
+            case R.id.L_JJ:
+                morseKey("Ж");
+                break;
+            case R.id.L_UU:
+                morseKey("Ю");
+                break;
             case R.id.L_CHG:
                 letterRus = !letterRus;
                 if (letterRus) {
