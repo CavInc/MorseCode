@@ -1,5 +1,6 @@
 package tk.cavinc.ui;
 
+import android.content.Intent;
 import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.AudioTrack;
@@ -9,10 +10,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
@@ -43,6 +48,9 @@ public class MainActivity extends AppCompatActivity  {
         //mEditText = (EditText) findViewById(R.id.letter_et);
 
         //mEditText.addTextChangedListener(mTextWatcher);
+        if (! new File(getFilesDir()+"/"+"dot.wav").exists()) {
+            mDataManager.createFile();
+        }
     }
 
     @Override
@@ -51,39 +59,21 @@ public class MainActivity extends AppCompatActivity  {
         data = mDataManager.loadMorseData();
     }
 
-    boolean editlock = false;
-    TextWatcher mTextWatcher = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.setting) {
+            Intent pref = new Intent(this,PrefActivity.class);
+            startActivity(pref);
         }
-
-        @Override
-        public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
-            Log.d(TAG,charSequence.toString());
-            Log.d(TAG,"START:"+start+" BEF:"+before+" COUNT:"+count);
-            String letter = charSequence.toString();
-            Log.d(TAG,"LETTER:"+letter);
-            AudioTrack tone = generateTone(1000, 100);
-            tone.play();
-            clearMemory(tone);
-            //tone = generateTone(4000,15000);
-            //tone.play();
-            //clearMemory(tone);
-        }
-
-        @Override
-        public void afterTextChanged(Editable editable) {
-            if (editlock ) {
-                editlock = false;
-                return;
-            }
-            Log.d(TAG,"EDD: "+editable.toString());
-            editable.clear();
-            editlock = true;
-        }
-    };
-
+        return super.onOptionsItemSelected(item);
+    }
 
     public void onButtonClick(View v){
         switch (v.getId()){
@@ -226,6 +216,8 @@ public class MainActivity extends AppCompatActivity  {
                     findViewById(R.id.key_panel_lat).setVisibility(View.VISIBLE);
                     findViewById(R.id.key_panel_rus).setVisibility(View.GONE);
                 }
+                break;
+            case R.id.lesson_bt:
                 break;
         }
     }

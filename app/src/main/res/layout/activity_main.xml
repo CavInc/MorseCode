@@ -20,7 +20,17 @@
         android:layout_height="wrap_content" />
 
 
+    <Button
+        android:id="@+id/lesson_bt"
+        android:layout_above="@+id/key_ll"
+        android:text="Начать урок"
+        android:onClick="onButtonClick"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <LinearLayout
+        android:id="@+id/key_ll"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="24dp"
         android:layout_width="match_parent"
