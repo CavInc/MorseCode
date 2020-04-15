@@ -1,5 +1,7 @@
 package tk.cavinc.utils;
 
+import java.util.ArrayList;
+
 /**
  * Created by cav on 14.04.20.
  */
@@ -153,6 +155,14 @@ public class Func {
             }
         }
         return FileDash;
+    }
+
+    public static String[] splitLesson(String lesson){
+        ArrayList<String> sb = new ArrayList<>();
+        for (int i = 0;i<lesson.length();i++){
+            sb.add(lesson.substring(i,i+1));
+        }
+        return (String[]) sb.toArray();
     }
 
 }

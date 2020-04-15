@@ -1,14 +1,16 @@
 package tk.cavinc.ui;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.media.AudioAttributes;
 import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.AudioTrack;
+import android.media.SoundPool;
+import android.media.SoundPool.Builder;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,7 +25,10 @@ import java.util.concurrent.TimeUnit;
 
 import tk.cavinc.R;
 import tk.cavinc.data.managers.DataManager;
+import tk.cavinc.data.models.LessonModel;
 import tk.cavinc.data.models.LeterMorseModel;
+
+import static android.media.AudioAttributes.USAGE_GAME;
 
 /**
  * Created by cav on 24.03.20.
@@ -34,9 +39,14 @@ public class MainActivity extends AppCompatActivity  {
     private DataManager mDataManager;
 
     private TextView mMsg;
+    private TextView mLessonTxt;
     private EditText mEditText;
     private ArrayList<LeterMorseModel> data;
+    private ArrayList<LessonModel> mLessonModels;
     private boolean letterRus = false;
+
+    private SoundPool mSoundPool;
+    private int mStreamID;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,6 +56,7 @@ public class MainActivity extends AppCompatActivity  {
 
         mMsg = findViewById(R.id.morze_symbol);
         //mEditText = (EditText) findViewById(R.id.letter_et);
+        mLessonTxt = findViewById(R.id.morze_lesson);
 
         //mEditText.addTextChangedListener(mTextWatcher);
         if (! new File(getFilesDir()+"/"+"dot.wav").exists()) {
@@ -57,6 +68,7 @@ public class MainActivity extends AppCompatActivity  {
     protected void onResume() {
         super.onResume();
         data = mDataManager.loadMorseData();
+        mLessonModels = mDataManager.loadLesson();
     }
 
     @Override
@@ -78,44 +90,88 @@ public class MainActivity extends AppCompatActivity  {
     public void onButtonClick(View v){
         switch (v.getId()){
             case R.id.L_Q:
-                if (letterRus) {
+                if (!letterRus) {
                     morseKey("Q");
                 } else {
                     morseKey("Й");
                 }
                 break;
             case R.id.L_W:
-                morseKey("W");
+                if (!letterRus) {
+                    morseKey("W");
+                } else {
+                    morseKey("Ц");
+                }
                 break;
             case R.id.L_E:
-                morseKey("E");
+                if (!letterRus) {
+                    morseKey("E");
+                } else {
+                    morseKey("У");
+                }
                 break;
             case R.id.L_R:
-                morseKey("R");
+                if (!letterRus) {
+                    morseKey("R");
+                } else {
+                    morseKey("К");
+                }
                 break;
             case R.id.L_T:
-                morseKey("T");
+                if (!letterRus) {
+                    morseKey("T");
+                } else {
+                    morseKey("Е");
+                }
                 break;
             case R.id.L_Y:
-                morseKey("Y");
+                if (!letterRus) {
+                    morseKey("Y");
+                } else {
+                    morseKey("Н");
+                }
                 break;
             case R.id.L_U:
-                morseKey("U");
+                if (!letterRus) {
+                    morseKey("U");
+                } else {
+                    morseKey("Г");
+                }
                 break;
             case R.id.L_I:
-                morseKey("I");
+                if (!letterRus) {
+                    morseKey("I");
+                } else {
+                    morseKey("Ш");
+                }
                 break;
             case R.id.L_O:
-                morseKey("O");
+                if (!letterRus) {
+                    morseKey("O");
+                } else {
+                    morseKey("Щ");
+                }
                 break;
             case R.id.L_P:
-                morseKey("P");
+                if (!letterRus) {
+                    morseKey("P");
+                } else {
+                    morseKey("З");
+                }
                 break;
             case R.id.L_A:
-                morseKey("A");
+                if (!letterRus) {
+                    morseKey("A");
+                } else {
+                    morseKey("Ф");
+                }
                 break;
             case R.id.L_S:
-                morseKey("S");
+                if (!letterRus) {
+                    morseKey("S");
+                } else {
+                    morseKey("Ы");
+                }
                 break;
             case R.id.L_D:
                 morseKey("D");
@@ -218,9 +274,16 @@ public class MainActivity extends AppCompatActivity  {
                 }
                 break;
             case R.id.lesson_bt:
+                startLesson();
                 break;
         }
     }
+
+    private void startLesson() {
+        int currentLesson = mDataManager.getPreManager().getCurrentLesson();
+
+    }
+
 
     private void morseKey(String letter){
         int id = data.indexOf(new LeterMorseModel(letter,letter,null));
@@ -303,6 +366,29 @@ public class MainActivity extends AppCompatActivity  {
         track = null;
     }
 
+
+    @TargetApi(21)
+    private void createNewSoundPool() {
+        //setUsage(14)
+        mSoundPool = new Builder().setAudioAttributes(new AudioAttributes.Builder()
+                .setUsage(USAGE_GAME).setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION).build()).build();
+    }
+
+    private void createOldSoundPool() {
+        mSoundPool = new SoundPool(3, 3, 0);
+    }
+
+    private int playSound(int sound) {
+        if (sound > 0) {
+            mStreamID = mSoundPool.play(sound, 1.0f, 1.0f, 1, 0, 1.0f);
+        }
+        return mStreamID;
+    }
+
+    private int loadSound(String fileName) {
+        //return mSoundPool.load(getApplicationInfo().dataDir + "/files/" + fileName, 1);
+        return mSoundPool.load(getFilesDir()+"/"+fileName,1);
+    }
 
 
 }

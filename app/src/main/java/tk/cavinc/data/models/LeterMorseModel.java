@@ -57,11 +57,12 @@ public class LeterMorseModel {
             if (tmp.getLatLeter().equals(mLatLeter)) {
                 return true;
             }
-            /*
+
             if (tmp.getRusLeter().equals(mRusLeter)) {
                 return true;
             }
-            */
+
+
         }
         return false;
     }
