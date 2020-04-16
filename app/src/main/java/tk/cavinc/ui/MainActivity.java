@@ -174,46 +174,102 @@ public class MainActivity extends AppCompatActivity  {
                 }
                 break;
             case R.id.L_D:
-                morseKey("D");
+                if (letterRus) {
+                    morseKey("В");
+                } else {
+                    morseKey("D");
+                }
                 break;
             case R.id.L_F:
-                morseKey("F");
+                if (letterRus){
+                    morseKey("А");
+                } else {
+                    morseKey("F");
+                }
                 break;
             case R.id.L_G:
-                morseKey("G");
+                if (letterRus){
+                    morseKey("П");
+                } else {
+                    morseKey("G");
+                }
                 break;
             case R.id.L_H:
-                morseKey("H");
+                if (letterRus) {
+                    morseKey("Р");
+                } else {
+                    morseKey("H");
+                }
                 break;
             case R.id.L_J:
-                morseKey("J");
+                if (letterRus) {
+                    morseKey("О");
+                } else {
+                    morseKey("J");
+                }
                 break;
             case R.id.L_K:
-                morseKey("K");
+                if (letterRus){
+                    morseKey("Л");
+                } else {
+                    morseKey("K");
+                }
                 break;
             case R.id.L_L:
-                morseKey("L");
+                if (letterRus) {
+                    morseKey("Д");
+                } else {
+                    morseKey("L");
+                }
                 break;
             case R.id.L_Z:
-                morseKey("Z");
+                if (letterRus) {
+                    morseKey("Я");
+                } else {
+                    morseKey("Z");
+                }
                 break;
             case R.id.L_X:
-                morseKey("X");
+                if (letterRus) {
+                    morseKey("Ч");
+                } else {
+                    morseKey("X");
+                }
                 break;
             case R.id.L_C:
-                morseKey("C");
+                if (letterRus) {
+                    morseKey("С");
+                } else {
+                    morseKey("C");
+                }
                 break;
             case R.id.L_V:
-                morseKey("V");
+                if (letterRus) {
+                    morseKey("М");
+                } else {
+                    morseKey("V");
+                }
                 break;
             case R.id.L_B:
-                morseKey("B");
+                if (letterRus) {
+                    morseKey("И");
+                } else {
+                    morseKey("B");
+                }
                 break;
             case R.id.L_N:
-                morseKey("N");
+                if (letterRus) {
+                    morseKey("Т");
+                } else {
+                    morseKey("N");
+                }
                 break;
             case R.id.L_M:
-                morseKey("M");
+                if (letterRus) {
+                    morseKey("Ь");
+                } else {
+                    morseKey("M");
+                }
                 break;
             case R.id.L_1:
                 morseKey("1");
