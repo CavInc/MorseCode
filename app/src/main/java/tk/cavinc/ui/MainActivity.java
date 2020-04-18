@@ -337,7 +337,8 @@ public class MainActivity extends AppCompatActivity  {
 
     private void startLesson() {
         int currentLesson = mDataManager.getPreManager().getCurrentLesson();
-
+        LessonModel lesson = mLessonModels.get(currentLesson);
+        mLessonTxt.setText(lesson.getLesson());
     }
 
 

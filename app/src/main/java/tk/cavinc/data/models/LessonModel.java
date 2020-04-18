@@ -20,4 +20,5 @@ public class LessonModel {
     public String getLesson() {
         return mLesson;
     }
+
 }

@@ -18,7 +18,7 @@ public class PrefManager {
 
     // скорость символов в уроке
     public int getWorkSpeed(){
-        return mSharedPreferences.getInt("count_sign_minute",20);
+        return Integer.parseInt(mSharedPreferences.getString("count_sign_minute","20"));
     }
 
     // текущий урок
