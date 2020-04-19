@@ -27,6 +27,7 @@ import tk.cavinc.R;
 import tk.cavinc.data.managers.DataManager;
 import tk.cavinc.data.models.LessonModel;
 import tk.cavinc.data.models.LeterMorseModel;
+import tk.cavinc.utils.Func;
 
 import static android.media.AudioAttributes.USAGE_GAME;
 
@@ -338,6 +339,8 @@ public class MainActivity extends AppCompatActivity  {
     private void startLesson() {
         int currentLesson = mDataManager.getPreManager().getCurrentLesson();
         LessonModel lesson = mLessonModels.get(currentLesson);
+        String[] letter = Func.splitLesson(lesson.getLesson());
+
         mLessonTxt.setText(lesson.getLesson());
     }
 
