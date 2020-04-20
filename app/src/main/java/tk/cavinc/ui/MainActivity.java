@@ -387,9 +387,10 @@ public class MainActivity extends AppCompatActivity  {
                             playSound(soundDash);
                             Thread.sleep((long) (durationDash + durationDot));
                         }
-                        //Thread.sleep((long) (durationDash + durationDot));
+                        Thread.sleep((long) (durationDash + durationDot));
 
                     }
+                    Thread.sleep((long) (durationDash + durationDot));
                     mSoundPool.release();
                     mSoundPool = null;
                 } catch (Exception e){
