@@ -6,8 +6,10 @@ import android.media.AudioAttributes;
 import android.media.AudioFormat;
 import android.media.AudioManager;
 import android.media.AudioTrack;
+import android.media.MediaPlayer;
 import android.media.SoundPool;
 import android.media.SoundPool.Builder;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +29,7 @@ import tk.cavinc.R;
 import tk.cavinc.data.managers.DataManager;
 import tk.cavinc.data.models.LessonModel;
 import tk.cavinc.data.models.LeterMorseModel;
+import tk.cavinc.utils.ConstantManager;
 import tk.cavinc.utils.Func;
 
 import static android.media.AudioAttributes.USAGE_GAME;
@@ -48,6 +51,8 @@ public class MainActivity extends AppCompatActivity  {
 
     private SoundPool mSoundPool;
     private int mStreamID;
+
+    MediaPlayer mPlayer;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -351,8 +356,64 @@ public class MainActivity extends AppCompatActivity  {
         if (id != -1) {
             LeterMorseModel item = data.get(id);
             mMsg.setText(item.getMnemonik()+"\n"+item.getCode());
-            playMorze(item.getCode());
+            //playMorze(item.getCode());
+            playMorze2(item.getCode());
         }
+    }
+
+    private void playMorze2(final String code) {
+        if (Build.VERSION.SDK_INT < 21) {
+            createOldSoundPool();
+        } else {
+            createNewSoundPool();
+        }
+
+        final int soundDot = loadSound("dot.wav");
+        final int soundDash = loadSound("dash.wav");
+        final int durationDot = 6000 / ConstantManager.SPEED;
+        final int durationDash = durationDot * 3;
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    for (int i = 0; i < code.length(); i++) {
+                        String m = code.substring(i, i + 1);
+                        Log.d(TAG, m);
+                        if (m.equals(".")) {
+                            playSound(soundDot);
+                            Thread.sleep((long) (durationDot * 2));
+                        } else if (m.equals("-")) {
+                            playSound(soundDash);
+                            Thread.sleep((long) (durationDash + durationDot));
+                        }
+                        //Thread.sleep((long) (durationDash + durationDot));
+
+                    }
+                    mSoundPool.release();
+                    mSoundPool = null;
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+                /*
+                try {
+                    playSound(soundDot);
+                    Thread.sleep((long) (durationDot * 2));
+                    playSound(soundDot);
+                    Thread.sleep((long) (durationDot * 2));
+                    playSound(soundDot);
+                    Thread.sleep((long) (durationDot * 2));
+                    playSound(soundDash);
+                    Thread.sleep((long) (durationDash + durationDot));
+                    mSoundPool.release();
+                    mSoundPool = null;
+                } catch (InterruptedException e7) {
+                    e7.printStackTrace();
+                }
+                */
+            }
+        }).start();
+
     }
 
     private void playMorze(final String code){
