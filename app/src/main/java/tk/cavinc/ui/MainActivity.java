@@ -376,6 +376,7 @@ public class MainActivity extends AppCompatActivity  {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                /*
                 try {
                     for (int i = 0; i < code.length(); i++) {
                         String m = code.substring(i, i + 1);
@@ -396,7 +397,8 @@ public class MainActivity extends AppCompatActivity  {
                 } catch (Exception e){
                     e.printStackTrace();
                 }
-                /*
+                */
+
                 try {
                     playSound(soundDot);
                     Thread.sleep((long) (durationDot * 2));
@@ -411,7 +413,7 @@ public class MainActivity extends AppCompatActivity  {
                 } catch (InterruptedException e7) {
                     e7.printStackTrace();
                 }
-                */
+
             }
         }).start();
 
