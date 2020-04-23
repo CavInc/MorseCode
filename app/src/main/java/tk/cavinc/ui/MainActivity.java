@@ -342,11 +342,15 @@ public class MainActivity extends AppCompatActivity  {
     }
 
     private void startLesson() {
+        Intent intent = new Intent(this,LessonActivity.class);
+        startActivity(intent);
+        /*
         int currentLesson = mDataManager.getPreManager().getCurrentLesson();
         LessonModel lesson = mLessonModels.get(currentLesson);
         String[] letter = Func.splitLesson(lesson.getLesson());
 
         mLessonTxt.setText(lesson.getLesson());
+        */
     }
 
 
@@ -447,12 +451,6 @@ public class MainActivity extends AppCompatActivity  {
                 clearMemory(tone);
             }
         }).start();
-
-        /*
-        AudioTrack tone = generateTone(1000, 100);
-        tone.play();
-        clearMemory(tone);
-        */
     }
 
     // https://www.cyberforum.ru/android-dev/thread1803841.html
