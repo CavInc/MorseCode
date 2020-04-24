@@ -1,5 +1,9 @@
 package tk.cavinc.utils;
 
+import android.media.AudioFormat;
+import android.media.AudioManager;
+import android.media.AudioTrack;
+
 import java.util.ArrayList;
 
 /**
@@ -157,12 +161,37 @@ public class Func {
         return FileDash;
     }
 
-    public static String[] splitLesson(String lesson){
+    public static ArrayList<String> splitLesson(String lesson){
         ArrayList<String> sb = new ArrayList<>();
         for (int i = 0;i<lesson.length();i++){
             sb.add(lesson.substring(i,i+1));
         }
-        return (String[]) sb.toArray();
+        return sb;
     }
 
+
+    public static AudioTrack generateTone(double freqHz, int durationMs){
+        int sampleRate = 48000;  // 44100 Hz
+        int count = (int)( sampleRate * 2.0 * (durationMs / 1000.0)) & ~1;
+        short[] samples = new short[count];
+        for(int i = 0; i < count; i += 2){
+            short sample = (short)(Math.sin(2 * Math.PI * i / (sampleRate / freqHz)) * 0x7FFF);
+            samples[i + 0] = sample;
+        }
+        AudioTrack track = new AudioTrack(AudioManager.STREAM_MUSIC, sampleRate,
+                AudioFormat.CHANNEL_IN_STEREO, AudioFormat.ENCODING_PCM_16BIT,
+                count * (Short.SIZE / 8), AudioTrack.MODE_STATIC);
+        track.write(samples, 0, count);
+        return track;
+    }
+
+    public static void clearMemory(AudioTrack track) {
+        try {
+            track.pause();
+        } catch (IllegalStateException e) {
+        }
+        track.flush();
+        track.release();
+        track = null;
+    }
 }

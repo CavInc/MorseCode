@@ -2,6 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="8dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
@@ -27,21 +30,33 @@
             android:text="Пред."
             android:id="@+id/lesson_prev"
             android:layout_weight="1"
+            android:background="@drawable/button_bg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/current_lesson"
             android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
         <Button
             android:text="Следующий"
             android:id="@+id/lesson_next"
             android:gravity="center"
+            android:background="@drawable/button_bg"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </LinearLayout>
+    <Button
+        android:id="@+id/lesson_start"
+        android:text="Начать"
+        android:background="@drawable/button_bg"
+        android:layout_marginBottom="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <TextView
         android:id="@+id/lesson_text"
         tools:text="ДДД-МММ-ФФФФ-ММММ"
@@ -50,5 +65,6 @@
         android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
 
 </LinearLayout>
