@@ -15,6 +15,7 @@ import tk.cavinc.R;
 import tk.cavinc.data.managers.DataManager;
 import tk.cavinc.data.models.LessonModel;
 import tk.cavinc.data.models.LeterMorseModel;
+import tk.cavinc.utils.ConstantManager;
 import tk.cavinc.utils.Func;
 
 /**
@@ -76,6 +77,7 @@ public class LessonActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void startLesson(){
+        int timeSleep = ConstantManager.SPEED / speed;
         ArrayList<String> letter = Func.splitLesson(lessonModel.getLesson());
         for (String l:letter){
             if (!l.equals("-")){
