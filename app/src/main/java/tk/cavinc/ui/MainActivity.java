@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity  {
         super.onResume();
         data = mDataManager.loadMorseData();
         mLessonModels = mDataManager.loadLesson();
+        findViewById(R.id.key_panel_rus).setVisibility(View.GONE);
     }
 
     @Override
